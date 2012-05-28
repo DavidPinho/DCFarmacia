@@ -10,8 +10,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "Produto.h"
 
 int main(void) {
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+	int n=1;
+    
+	teste(&n);
+	printf("%d",n); /* prints !!!Hello World!!! */
 	return EXIT_SUCCESS;
 }
