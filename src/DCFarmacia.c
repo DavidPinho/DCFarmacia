@@ -14,6 +14,8 @@
 #include <string.h>
 
 void cadastraRemedio(ProdutoList *l);
+void removeRemedio(ProdutoList *l);
+
 
 int main(void) {
     ProdutoList l;
@@ -80,3 +82,9 @@ void cadastraRemedio(ProdutoList *l){
     }
     
 }
+
+void removeRemedio(ProdutoList *l){
+    
+}
+
+

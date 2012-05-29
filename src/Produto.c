@@ -7,17 +7,19 @@
 
 #include "Produto.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
 
 void initList(ProdutoList *l){
     l->firstNode=NULL;
     l->currentNode=NULL;
 }
 
-int add(ProdutoList* l,Produto n){
+bool add(ProdutoList* l,Produto n){
     if(l->firstNode==NULL){
         PNode* e=(PNode *)malloc(sizeof(PNode));
         if(e==NULL)
-            return -1;
+            return false;
         else {
             e->p_value=n;
             e->next=NULL;
@@ -28,7 +30,7 @@ int add(ProdutoList* l,Produto n){
     } else {
         PNode* e=(PNode *)malloc(sizeof(PNode));
         if(e==NULL)
-            return -1;
+            return false;
         else {
             e->p_value=n;
             e->next=NULL;
@@ -39,7 +41,7 @@ int add(ProdutoList* l,Produto n){
         
     }
     
-    return 0;
+    return true;
 }
 
 PNode* get(ProdutoList l,int pos){
@@ -83,8 +85,19 @@ void removeAtPos(ProdutoList* l,int pos){
         currentElement=currentElement->next;
         i++;
     }
-    
-    
-    
 }
+
+void printProduto(Produto p){
+    printf("\n\nID: %d\nDescricao: %s\nPreco: %f",p.idProduto,p.desc,p.preco);
+}
+
+void listaProdutos(ProdutoList l){
+    PNode *current=l.firstNode;
+    while (current!=NULL) {
+        printProduto(current->p_value);
+        current=current->next;
+        system("pause");
+    }
+}
+
 

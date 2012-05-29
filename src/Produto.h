@@ -5,8 +5,12 @@
  *      Author: caio
  */
 
+#include <stdbool.h>
+
 #ifndef USUARIO_H_
 #define USUARIO_H_
+
+
 
 typedef struct{
     int idProduto;
@@ -27,9 +31,10 @@ typedef struct{
 }ProdutoList;
 
 void initList(ProdutoList *l);
-int add(ProdutoList *l,Produto n);
+bool add(ProdutoList *l,Produto n);
 PNode *get(ProdutoList l,int pos);
 int size(ProdutoList l);
 void removeAtPos(ProdutoList *l,int pos);
+void listaProdutos(ProdutoList l);
 
 #endif /* USUARIO_H_ */
